@@ -1,0 +1,121 @@
+@mixin btn-base {
+    padding: 1rem 1.35rem;
+    border-radius: 0.25rem;
+}
+
+@mixin btn-sm-modify {
+    font-size: 1rem;
+    padding: 0.3rem 0.65rem;
+}
+
+$color-main: #0052ff;
+$color-footer: #f5f8ff;
+
+.btn-main {
+    @include btn-base();
+    background-color: $color-main;
+    color: white;
+    border: solid 1px $color-main;
+    font-weight: 500;
+
+    &:hover {
+        background-color: white;
+        color: $color-main;
+    }
+
+    &-s {
+        @extend .btn-main;
+        @include btn-sm-modify();
+    }
+}
+
+.btn-sec {
+    @include btn-base();
+    color: #000000;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        color: #888;
+    }
+
+    &-s {
+        @extend .btn-sec;
+        @include btn-sm-modify();
+    }
+}
+
+.main-menu {
+    li {
+        font-size: 1rem;
+        list-style: none;
+        display: inline;
+        a {
+            color: black;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.icon-sm {
+    i {
+        display: flex;
+        margin-top: -1rem;
+        font-size: 1.25rem;
+        color: $color-main;
+        padding: 0.90rem;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00000052;
+    }
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    i {
+        color: $color-main;
+        font-size: 4rem;
+        text-align: center;
+    }
+    .description {
+        .title {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+        .text {
+            color: #888;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+    .cta {
+        margin-top: auto;
+        color: $color-main;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+.icon-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    i {
+        padding: 0;
+        color: $color-main;
+        font-size: 4rem;
+    }
+    .title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
